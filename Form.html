@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script>
+        function formvalidation() {
+    var first_name = document.forms["testForm"]["fname"];
+    var last_name = document.forms["testForm"]["lname"];
+    var password = document.forms["testForm"]["password"];
+
+    if (first_name.value == "") {
+        window.alert("Please enter first name");
+        first_name.focus();
+        return false;
+    }
+
+    if (last_name.value == "") {
+        window.alert("Please enter your last name");
+        last_name.focus();
+        return false;
+    }
+
+    if (password.value == "") {
+        window.alert(
+            "Please enter a valid Password");
+            password.focus();
+        return false;
+    }
+    return true;
+}
+    </script>
+</head>
+<body>
+    <form name="testForm" onsubmit="return formvalidation()">
+        First name: <input type = "text" name = "first_name" />
+        <br>
+        Last name: <input type = "text" name = "last_name" />
+        <br>
+        Password: <input type = "password" name = "password" />
+        <br>
+        Description : <br />
+         <textarea rows = "5" cols = "50" name = "description">
+            This is big description..
+         </textarea>
+         <br>
+         <input type = "checkbox" name = "vaccinated" value = "on"> Vaccinated
+         <input type = "checkbox" name = "nonvacc" value = "on"> Non Vaccinated
+         <br>
+         <input type = "radio" name = "age" value = "rightage"> 18+
+         <input type = "radio" name = "age" value = "underage"> >18
+         <br>
+         <select name = "dropdown">
+            <option value = "rightage" selected>18+</option>
+            <option value = "underage">>18</option>
+         </select>
+         <br>
+         <input type = "file" name = "fileupload" accept = "image/*" />
+         <br>
+         <input type = "submit" name = "submit" value = "Submit" />
+     </form>
+</body>
+
+</html>
+
